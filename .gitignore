@@ -114,3 +114,11 @@ media/
 # **/migrations/**
 # !**/migrations
 # !**/migrations/__init__.py
+
+# Ignore webpackers
+node_modules
+static
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
