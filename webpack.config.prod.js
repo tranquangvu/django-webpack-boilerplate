@@ -9,6 +9,7 @@ module.exports = merge(common, {
   stats: 'errors-only',
   bail: true,
   output: {
+    filename: 'scripts/[name].[chunkhash:8].js',
     chunkFilename: 'scripts/[name].[chunkhash:8].chunk.js',
   },
   plugins: [
@@ -16,8 +17,14 @@ module.exports = merge(common, {
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     new MiniCssExtractPlugin({
-      filename: 'stylesheets/[name].css',
-      chunkFilename: 'stylesheets/[id].css',
+      filename: 'styles/[name].css',
+      chunkFilename: 'styles/[id].css',
+    }),
+    new Webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      Popper: ['popper.js', 'default'],
     }),
   ],
   module: {

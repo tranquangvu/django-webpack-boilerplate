@@ -11,17 +11,19 @@ module.exports = merge(common, {
   output: {
     chunkFilename: 'scripts/[name].chunk.js',
   },
-  devServer: {
-    inline: true,
-    hot: true,
-  },
   plugins: [
     new Webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development'),
     }),
     new MiniCssExtractPlugin({
-      filename: 'stylesheets/[name].css',
-      chunkFilename: 'stylesheets/[id].css',
+      filename: 'styles/[name].css',
+      chunkFilename: 'styles/[id].css',
+    }),
+    new Webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      Popper: ['popper.js', 'default'],
     }),
   ],
   module: {
@@ -36,17 +38,9 @@ module.exports = merge(common, {
         },
       },
       {
-        test: /\.html$/i,
-        loader: 'html-loader',
-      },
-      {
         test: /\.js$/,
         include: Path.resolve(__dirname, './assets'),
         loader: 'babel-loader',
-      },
-      {
-        test: /\.s?css$/i,
-        use: ['style-loader', 'css-loader?sourceMap=true', 'postcss-loader', 'sass-loader'],
       },
       {
         test: /\.s?css$/i,

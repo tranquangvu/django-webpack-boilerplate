@@ -43,6 +43,17 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "django-manifest-loader"
+version = "1.0.0"
+description = "A Django app to load webpack assets."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+django = "*"
+
+[[package]]
 name = "pillow"
 version = "8.1.0"
 description = "Python Imaging Library (Fork)"
@@ -77,7 +88,7 @@ python-versions = ">=3.5"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9.0"
-content-hash = "e5d143a7df0650948a04e1030d4fa6879989d1320d086a2d52e0dced56d49c76"
+content-hash = "2a00d854df1b9b0b3cf5062f3e0f79562945c2fb13e3c854f99d78eab4410353"
 
 [metadata.files]
 asgiref = [
@@ -95,6 +106,10 @@ django-crispy-forms = [
 django-environ = [
     {file = "django-environ-0.4.5.tar.gz", hash = "sha256:6c9d87660142608f63ec7d5ce5564c49b603ea8ff25da595fd6098f6dc82afde"},
     {file = "django_environ-0.4.5-py2.py3-none-any.whl", hash = "sha256:c57b3c11ec1f319d9474e3e5a79134f40174b17c7cc024bbb2fad84646b120c4"},
+]
+django-manifest-loader = [
+    {file = "django-manifest-loader-1.0.0.tar.gz", hash = "sha256:cd7a5585d17b07cf7d672c201ecb3476121f65c9b522e29f25c2ee4e9f87ab34"},
+    {file = "django_manifest_loader-1.0.0-py3-none-any.whl", hash = "sha256:17a6e5b47ff6999ca530e754d874c1e4b0c7f16e72c761e3e05bc529cee34145"},
 ]
 pillow = [
     {file = "Pillow-8.1.0-cp36-cp36m-macosx_10_10_x86_64.whl", hash = "sha256:d355502dce85ade85a2511b40b4c61a128902f246504f7de29bbeec1ae27933a"},

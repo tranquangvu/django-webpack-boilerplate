@@ -1,5 +1,6 @@
 const Path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -9,7 +10,7 @@ module.exports = {
   output: {
     path: Path.join(__dirname, './static'),
     filename: 'scripts/[name].js',
-    publicPath: '/static/',
+    publicPath: '',
   },
   optimization: {
     splitChunks: {
@@ -19,6 +20,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new WebpackManifestPlugin(),
     new CopyWebpackPlugin({ patterns: [{ from: Path.resolve(__dirname, './assets/public'), to: 'public' }] }),
   ],
   resolve: {
