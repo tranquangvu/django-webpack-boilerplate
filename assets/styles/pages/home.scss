@@ -1,0 +1,26 @@
+@import '../shared/variables';
+
+.home-page {
+  color: $black;
+
+  .logo {
+    width: 300px;
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .description {
+    font-size: 14px;
+
+    span {
+      display: inline-block;
+      background: rgba(0, 0, 0, .1);
+      border-radius: 4px;
+      padding: 2px 8px;
+      margin: 0 2px;
+    }
+  }
+}

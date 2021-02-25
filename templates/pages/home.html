@@ -1,9 +1,26 @@
 {% extends "layouts/app.html" %}
-{% load static %}
+{% load manifest %}
+
+{% block styles %}
+  <link rel="stylesheet" type="text/css" href="{% manifest 'pages/home.css' %}">
+{% endblock styles %}
 
 {% block content %}
-<div class="container">
-  <h1>Home page</h1>
-  <a href="#" id='mot'>click me</a>
+<div class="home-page">
+  <div class="vh-100 d-flex align-items-center justify-content-center flex-column">
+    <img src="{% manifest 'images/logo.png' %}" class="logo mb-4">
+    <h1 class="title">Django & Webpack install worked successfully! Congratulations!</h1>
+    <div class="description mb-4">
+      <span>Python: v3.9.0</span>
+      <span>Django: v3.1.7</span>
+      <span>Author: <a href="https://github.com/tranquangvu">tranquangvu</a></span>
+      <span>Company: <a href="https://goldenowl.asia">Golden Owl Consulting</a></span>
+    </div>
+    <a href="#" id="getstarted-btn" class="btn btn-primary">Get Started</a>
+  </div>
 </div>
 {% endblock content %}
+
+{% block scripts %}
+  <script type="text/javascript" src="{% manifest 'pages/home.js' %}"></script>
+{% endblock scripts %}

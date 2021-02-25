@@ -5,7 +5,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: Path.resolve(__dirname, './assets/scripts/app.js'),
+    'app': Path.resolve(__dirname, './assets/scripts/app.js'),
+    'pages/home': Path.resolve(__dirname, './assets/scripts/pages/home.js'),
   },
   output: {
     path: Path.join(__dirname, './static'),
