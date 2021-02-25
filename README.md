@@ -54,3 +54,7 @@ Stop webpack assets manager and restart it again `npm run assets:dev`
 ## Deployment
 
 Coming soon...
+
+## License
+
+Licensed under the MIT license, see the separate LICENSE.md file.
