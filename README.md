@@ -11,14 +11,45 @@ Django 3.x starter with Webpack configurations for assets manager (ES5+, SCSS, .
 
 ## Installation
 
-1. Make sure you have installed `python`, `poetry`, `django`, `nodejs`
-2. Add `.env` file to `app/.env` (follow `app/.env.example` - must have DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME)
-3. Install pip packages: `poetry install`
-3. Install nodejs packages: `npm install`
-4. Run migrations: `poetry run ./manage.py migrate`
-5. Start webpack assets manager: `npm run assets:dev`
-6. Start django server: `poetry run ./manage.py runserver`
-7. Check `http://localhost:8000` and start coding
+1. Make sure you have installed `pyenv`, `python`, `poetry`, `django`, `nodejs`
+2. Install correct python version
+```
+  pyenv install 3.9.0
+  pyenv local 3.9.0
+```
+3. Install pip packages
+```
+  poetry install
+```
+4. Install nodejs packages
+```
+  npm install
+```
+5. Add `.env` file to `app/.env` follow `app/.env.example`, you must have at least `DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME` for database connecting. Here's sample for development
+```
+  DB_HOST=localhost
+  DB_PORT=5432
+  DB_USER=postgres
+  DB_PASSWORD=pwd123
+  DB_NAME=djangostarter
+
+  SENDGRID_USER=userxxx
+  SENDGRID_PASSWORD=passwordxxx
+  DEFAULT_FROM_EMAIL=noreply@domain.com
+```
+6. Run migrations
+```
+  poetry run python manage.py migrate
+```
+7. Start webpack assets manager
+```
+  npm run assets:dev
+```
+8. Start django server
+```
+  poetry run python manage.py runserver
+```
+9. Check `http://localhost:8000` and start coding
 
 ## Multiple Pages Assets Manager
 
